@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Referee
+Exec=referee
+Comment=Install flatpak and flatpakref files with the click of a button
+Terminal=true
+Icon=gnome-panel-launcher
+Type=Application
+MimeType=application/vnd.flatpak.ref;application/vnd.flatpak

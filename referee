@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+if [ -z "$1" ]
+then
+      echo "Please specify a flatpak or flatpakref to install"
+      exit
+fi
+flatpakName=$(cat $1 | grep -oP "(?<=\bName=)\N+")
+notify-send -i package-x-generic-symbolic "Referee" "Installing $flatpakName"
+flatpak install $1 --assumeyes
+if [ $? -eq 0 ]; then
+    notify-send -i package-x-generic-symbolic "Referee" "Installed $flatpakName"
+else
+    notify-send -i package-x-generic-symbolic "Referee" "Install Failed"
+fi
